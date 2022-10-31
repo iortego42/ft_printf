@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int ft_what_to_print(va_list content, const char identifier)
 {
@@ -25,7 +25,6 @@ int ft_what_to_print(va_list content, const char identifier)
 int ft_printf(const char *str, ...)
 {
   va_list variables;
-  void  *ptr;
   int charcount;
 
   charcount = 0;
