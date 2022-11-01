@@ -23,14 +23,22 @@ int ft_puthex_up_fd(const unsigned int number, int fd)
   dictionary = "0123456789ABCDEF";
 
    if (number > 15 )
-     count += ft_puthex_lo_fd(number / 16, fd);
+     count += ft_puthex_up_fd(number / 16, fd);
    count += ft_putchar_fd(dictionary[number % 16], fd); 
    return (count); 
 }
 
 int ft_putunsigned_fd(const unsigned int number, int fd)
 {
-  return (ft_putnbr_fd(number, fd));
+  long unsigned int	n;
+  int count;
+	
+  count = 0;
+  n = number;
+	if (n > 9)
+		count += ft_putunsigned_fd(n / 10, fd);
+	count += ft_putchar_fd(n % 10 + '0', fd);
+  return (count);
 }
 
 int ft_putptr_fd(const void *pointer, int fd)

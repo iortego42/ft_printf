@@ -15,11 +15,10 @@ OBJECTS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(LIBFT): | $(LIBFT-DIR)
-	echo "$(LIBFT)"
 	make -C $(LIBFT-DIR)
-
+	cp $(LIBFT) $(NAME)
 $(NAME): $(OBJECTS) $(LIBFT)
-	ar -rc $(NAME) $(OBJECTS) $(LIBFT)
+	ar -rc $(NAME) $(OBJECTS)
 
 clean:
 	make -C $(LIBFT-DIR) clean
