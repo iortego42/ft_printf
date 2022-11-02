@@ -19,7 +19,7 @@ int	ft_putstr_fd(char *s, int fd)
 	if (s != NULL)
 	{
 		lenght = ft_strlen(s);
-		return (write(fd, s, lenght), lenght);
+		return (write(fd, s, lenght));
 	}
-	return (0);
+	return (write(1, "(null)", 6));
 }
