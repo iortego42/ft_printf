@@ -26,7 +26,7 @@ int	ft_putnbr_fd(int a, int fd)
 		n *= -1;
 	}
 	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
+		count += ft_putnbr_fd(n / 10, fd);
 	count += ft_putchar_fd(n % 10 + '0', fd);
 	return (count);
 }
